@@ -23,7 +23,15 @@ if (isset($_SESSION["uid"]) == 'Admin') {
     $m_lat = $_REQUEST['m_lat'];
     $m_desc = $_REQUEST['m_desc'];
     $m_image = $_FILES["uploadfile"]["name"];
-    $sql = "INSERT INTO add_machine VALUES ('$m_name','$m_uid','$m_long','$m_lat','$m_desc','$m_image')";
+
+    $data = $_POST["qr_data"];
+    $width = 500;
+    $height = 500;
+
+    $url = "https://chart.googleapis.com/chart?cht=qr&chs={$width}x{$height}&chl={$data}";
+
+
+    $sql = "INSERT INTO add_machine VALUES ('$m_name','$m_uid','$m_long','$m_lat','$m_desc','$m_image','$url')";
 }
 
 

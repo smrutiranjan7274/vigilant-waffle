@@ -7,6 +7,7 @@ while ($rows = mysqli_fetch_assoc($result)) {
     print('<p class="text-muted mb-1">Unique ID: ' . $rows['m_uid'] . '</p>');
     print('</div>');
     print('<div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">');
+    print('<img src="' . $rows['m_qrcode'] . '" alt="QR Code" width="20%">');
     print('</div>');
     print('</div>');
 }

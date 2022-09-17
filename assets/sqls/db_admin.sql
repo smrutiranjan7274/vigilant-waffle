@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 15, 2022 at 09:19 PM
+-- Generation Time: Sep 17, 2022 at 08:19 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -33,20 +33,21 @@ CREATE TABLE `add_machine` (
   `m_lat` decimal(19,4) NOT NULL,
   `m_long` decimal(19,4) NOT NULL,
   `m_desc` varchar(100) NOT NULL,
-  `m_image` varchar(100) NOT NULL
+  `m_image` varchar(100) NOT NULL,
+  `m_qrcode` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `add_machine`
 --
 
-INSERT INTO `add_machine` (`m_name`, `m_uid`, `m_lat`, `m_long`, `m_desc`, `m_image`) VALUES
-('JCB100', 9644, '85.8384', '20.2935', 'ghtds', 'hd-3840x2160-abstract-polygon-13564.jpg'),
-('luna k800', 23755, '85.8384', '20.2935', 'faster than your munna!!!', 'tvs-heavydutysuperxl.webp'),
-('JCB100', 59308, '85.8384', '20.2935', 'bheri big', '6946828.jpg'),
-('New Machine', 62807, '85.8384', '20.2935', 'New mechanics drills thru the core', 'logo.png'),
-('Baymax hero 6', 71590, '85.8384', '20.2935', 'Lesgoooo', 'wGVydcScn4XigfG0-mD7CkhlEQ4xryFxBPDYjpB8zuo.webp'),
-('gamur da faq', 94451, '85.8384', '20.2935', 'true gamurr', 'smruti.png');
+INSERT INTO `add_machine` (`m_name`, `m_uid`, `m_lat`, `m_long`, `m_desc`, `m_image`, `m_qrcode`) VALUES
+('Sub Machine Gun', 42083, '85.8384', '20.2935', 'a short and rapid firing gun', 'logo.png', 'https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl=42083'),
+('Machine Train', 50839, '85.8369', '20.2876', 'Bakes cakes over the oven! Fast mode of transport!', 'machine_640.jpg', 'https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl=50839'),
+('Tuning Machine', 51414, '85.8369', '20.2876', 'Used for tuning various stuffs!', 'tuning_640.jpg', 'https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl=51414'),
+('Harley Davidson', 65222, '85.8384', '20.2935', 'retro bike with a great look and feel!', 'harley-davidson_640.jpg', 'https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl=65222'),
+('Automatic Boat', 98215, '85.8384', '20.2935', 'The all new auto sailing boat with new features', 'game.png', 'https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl=98215'),
+('Macro Machine', 99533, '85.8369', '20.2876', 'Dont know much about the description for this machine', 'macro_640.jpg', 'https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl=99533');
 
 -- --------------------------------------------------------
 

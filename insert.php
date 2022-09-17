@@ -6,10 +6,8 @@
     include "assets/helpers/header_include.php";
     include "assets/helpers/checkuser.php";
     include "assets/helpers/insertdata.php";
-    include "assets/helpers/generateqr.php";
     
     $url = "https://chart.googleapis.com/chart?cht=qr&chs={$width}x{$height}&chl={$data}";
-
 ?>
     
 </head>
@@ -64,7 +62,7 @@
                                 <br><br>
                                 <center>
                                     <!-- class="btn btn-success" -->
-                                    <a  href="<?php echo $url ?>.jpg" download="QR Code" target="_blank">
+                                    <a  href="<?php echo $url ?>" download="QR Code" target="_blank">
                                         <img src="<?php echo $url ?>" alt="QR Code" width="100%" height="100%">
                                     </a>
                                 </center>

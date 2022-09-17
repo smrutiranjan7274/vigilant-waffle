@@ -7,7 +7,7 @@
   include "assets/helpers/checkuser.php";
   
   $conn = mysqli_connect('localhost', 'root', '', 'db_admin');
-  $query = "SELECT m_uid, m_name FROM `add_machine`;";
+  $query = "SELECT m_uid, m_name, m_qrcode FROM `add_machine`;";
   $result = mysqli_query($conn, $query);
   
   ?>
@@ -46,8 +46,11 @@
                     <p class="text-muted mb-1">Unique ID: ' . $rows['m_uid'] . </p>
                   </div>
                   <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
+                    <img src="" alt="QR">
+                    <img src="" alt="QR">
                   </div>
                 </div> -->
+
               </div>
             </div>
           </div>
