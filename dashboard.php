@@ -7,8 +7,15 @@
   include "assets/helpers/checkuser.php";
   
   $conn = mysqli_connect('localhost', 'root', '', 'db_admin');
+  
   $query = "SELECT m_uid, m_name, m_qrcode FROM `add_machine`;";
   $result = mysqli_query($conn, $query);
+
+  $complaints_query = "SELECT * FROM `add_machine` INNER JOIN `complaints` ON complaints.c_uid = add_machine.m_uid;";
+  $complaints = mysqli_query($conn, $complaints_query);
+
+  $unresolved = "";
+  $resolved = "";
   
   ?>
 </head>
@@ -58,34 +65,63 @@
           <div class="col-md-8 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
+                <h1>Complaints Status:</h1>
+                <?php include 'assets/helpers/fetchchart.php'?>
+                <div id="piechart" style="width: 100%; height: 100%;"></div>
+              </div>
+            </div>          
+          </div>
+          <div class="card">
+              <div class="card-body">
                 <div class="d-flex flex-row justify-content-between">
                   <h4 class="card-title mb-1">Complaints</h4>
-                  <p class="text-muted mb-1">Details</p>
+                  <button class="btn btn-outline-success" onclick="loadCompList()" style="font-size: 20px;">Get List</button>
                 </div>
-                <div class="row">
-                  <div class="col-12">
-                    <div class="preview-list">
-                      <div class="preview-item">
-                        <div class="preview-item-content d-sm-flex flex-grow">
-                          <div class="flex-grow">
-                            <h6 class="preview-subject">UI Design</h6>
-                          </div>
-                          <div class="mr-auto text-sm-right pt-2 pt-sm-0">
-                            <p class="text-muted">50 minutes ago</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div hidden id="list">
+                  <?php include 'assets/helpers/fetchcomplaints.php'?>
                 </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </div>
   </div>
   <?php include "assets/helpers/footer_include.php"; ?>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+  google.charts.load('current', { 'packages': ['corechart'] });
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+
+    var data = google.visualization.arrayToDataTable([
+      ['Status', 'Complaints'],
+      ['Unresolved', <?php echo $unresolved ?>],
+      ['Resolved', <?php echo $resolved ?>]
+        
+      ]);
+
+    var options = {
+      slices: {
+        0: { color: '#db3236' },
+        1: { color: '#3cba54' }
+      }
+    };
+
+
+    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+    chart.draw(data, options);
+  }
+  </script>
+  <script>
+    
+    function loadCompList(){
+      document.getElementById("list").hidden = false;
+    }
+    
+  </script>
 </body>
 
 </html>

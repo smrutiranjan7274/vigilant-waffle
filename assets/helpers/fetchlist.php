@@ -1,6 +1,10 @@
 <?php
-
 while ($rows = mysqli_fetch_assoc($result)) {
+
+    // echo '<pre>';
+    // print_r($rows);
+    // echo '</pre>';
+
     print('<div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">');
     print('<div class="text-md-center text-xl-left">');
     print('<h4 class="mb-1">' . $rows['m_name'] . '</h4>');

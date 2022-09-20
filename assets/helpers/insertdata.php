@@ -33,6 +33,4 @@ if (isset($_SESSION["uid"]) == 'Admin') {
 
     $sql = "INSERT INTO add_machine VALUES ('$m_name','$m_uid','$m_long','$m_lat','$m_desc','$m_image','$url')";
 }
-
-
 ?>

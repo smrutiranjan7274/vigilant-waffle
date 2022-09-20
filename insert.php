@@ -73,9 +73,9 @@
 
                         <br>
                         <center>
-                            <button class="btn btn-primary" onclick="goBack()" name="upload">Back</button>
+                            <button class="btn btn-outline-primary" onclick="goBack()" style="font-size: 20px;" name="back">Back</button>
                             <button style="background-color: transparent; border: none;">
-                                <a class="btn btn-primary" href="add_machine.php" readonly>Add Another Machine</a>
+                                <a class="btn btn-outline-success" href="add_machine.php" style="font-size: 20px;" readonly>Add Another Machine</a>
                             </button>
                         </center>
                     </div>
