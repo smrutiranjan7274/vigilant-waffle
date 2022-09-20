@@ -1,5 +1,4 @@
-<?php include "db_config.php"; ?>
-<?php
+<?php include "db_config.php";
 session_start();
 $uid = $_POST["uid"];
 $pwd = $_POST["pwd"];

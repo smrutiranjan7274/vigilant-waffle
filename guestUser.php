@@ -80,7 +80,6 @@ if (isset($_POST['getDetails'])) {
           <span class="sr-only">Next</span>
         </a>
       </div>
-
       <div class="content-wrapper">
         <div class="row">
           <div class="col">

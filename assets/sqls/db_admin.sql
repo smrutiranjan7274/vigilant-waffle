@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 20, 2022 at 03:33 PM
+-- Generation Time: Sep 20, 2022 at 07:12 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -93,53 +93,6 @@ INSERT INTO `tbl_login` (`uid`, `pwd`, `role`) VALUES
 ('Admin', 'Admin@123', 'ADMIN'),
 ('User', 'User@123', 'USER');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_roles`
---
-
-CREATE TABLE `tbl_roles` (
-  `id` int(11) NOT NULL COMMENT 'role_id',
-  `role` varchar(255) DEFAULT NULL COMMENT 'role_text'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tbl_roles`
---
-
-INSERT INTO `tbl_roles` (`id`, `role`) VALUES
-(1, 'Admin'),
-(2, 'Editor'),
-(3, 'User');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_users`
---
-
-CREATE TABLE `tbl_users` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `username` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  `mobile` varchar(25) DEFAULT NULL,
-  `roleid` tinyint(4) DEFAULT NULL,
-  `isActive` tinyint(4) DEFAULT 0,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tbl_users`
---
-
-INSERT INTO `tbl_users` (`id`, `name`, `username`, `email`, `password`, `mobile`, `roleid`, `isActive`, `created_at`, `updated_at`) VALUES
-(7, 'Adarsh', 'turndownforwhat', 'hellophp@gmail.com', '7474d443fd4bcf6b44075ac5761fa065734142c1', '9969697969', 1, 0, '2020-03-12 16:23:01', '2020-03-12 16:23:01'),
-(22, 'Alex Panda', 'jodorwhattt', 'jodgamer@yahoo.com', 'cae29ef7d55a230f519bf472eeabd612a1c02ebb', '5421637896', 3, 0, '2022-09-13 18:33:17', '2022-09-13 18:33:17');
-
 --
 -- Indexes for dumped tables
 --
@@ -156,34 +109,6 @@ ALTER TABLE `add_machine`
 --
 ALTER TABLE `complaints`
   ADD PRIMARY KEY (`c_uid`);
-
---
--- Indexes for table `tbl_roles`
---
-ALTER TABLE `tbl_roles`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_users`
---
-ALTER TABLE `tbl_users`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `tbl_roles`
---
-ALTER TABLE `tbl_roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'role_id', AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `tbl_users`
---
-ALTER TABLE `tbl_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

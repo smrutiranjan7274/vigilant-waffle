@@ -62,16 +62,16 @@
             </div>
           </div>
 
-          <div class="col-md-8 grid-margin stretch-card">
+          <div class="col-md-8 grid-margin">
             <div class="card">
               <div class="card-body">
                 <h1>Complaints Status:</h1>
                 <?php include 'assets/helpers/fetchchart.php'?>
-                <div id="piechart" style="width: 100%; height: 100%;"></div>
+                <div id="piechart" style="height: 100%;"></div>
               </div>
-            </div>          
-          </div>
-          <div class="card">
+            </div>
+            <br>
+            <div class="card">
               <div class="card-body">
                 <div class="d-flex flex-row justify-content-between">
                   <h4 class="card-title mb-1">Complaints</h4>
@@ -82,6 +82,7 @@
                 </div>
               </div>
             </div>
+          </div>       
         </div>
       </div>
     </div>
